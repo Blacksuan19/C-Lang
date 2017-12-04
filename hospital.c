@@ -324,7 +324,8 @@ char symptoms()
 	Line();
 	//print out the symptoms so user can choose
 	printf("list of symptoms: \n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n", symptoms_array[0], symptoms_array[1], symptoms_array[2], symptoms_array[3], symptoms_array[4], symptoms_array[5], symptoms_array[6], symptoms_array[7], symptoms_array[8], symptoms_array[9], symptoms_array[10]);
-	printf("Now please tell me your symptoms: (press enter after each one):\n");
+	printf("Now please tell me your symptoms: (in order and if you don't have that symptom enter anything):\n");
+	//
 	//there are 10 slots so if you have less symptoms you just keep pressing enter until you fill them all.
 	scanf("%s", &symptoms_user[0]);
 	scanf("%s", &symptoms_user[1]);
@@ -337,9 +338,9 @@ char symptoms()
 	scanf("%s", &symptoms_user[8]);
 	scanf("%s", &symptoms_user[9]);
 	scanf("%s", &symptoms_user[10]);
-	if ()
+	if (strcmp(symptoms_user[6], symptoms_array[6]) == 0 || strcmp(symptoms_user[7], symptoms_array[7]) == 0)
 	{
-		printf("Am sorry to tell you this but, ");
+		printf("from to your symptoms i can see that ");
 		printf("You have diabetes type 2\n");
 		Line();
 		printf("it is caused by the body not able to observe insulin effectively\n");
@@ -353,9 +354,9 @@ char symptoms()
 		printf("Also please come back here every month so i can do some regular tests\n");
 		diabetes_type = 2;
 	}
-	else if ()
+	if (strcmp(symptoms_user[8], symptoms_array[8]) == 0 || strcmp(symptoms_user[9], symptoms_array[9]) == 0)
 	{
-		printf("Am sorry to tell you this but,");
+		printf("from to your symptoms i can see that ");
 		printf("You have diabetes type 1\n");
 		Line();
 		printf("it can be inherited across the family\n");
@@ -369,6 +370,12 @@ char symptoms()
 		Line();
 		printf("Also please come back here every month so i can do some regular tests\n");
 		diabetes_type = 1;
+	}
+	else
+	{
+		printf("okay so seems like you don't have diabetes \n");
+		printf("so i will redirect you to a normal hospital\n");
+		printf("thank you, hope you get well soon\n");
 	}
 }
 
