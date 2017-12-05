@@ -45,7 +45,7 @@ float CalclulateUnitPrice(int x, float y)
 	float c;
 	area = PI * (x / 2) * (x / 2); //first calculate the area (since its a circle)
 	c = y / area; // calculating the unit price 
-	return c; // return the user inputed value 
+	return c; // return calculated value	 
 }
 float Compare(float x, float z)
 {

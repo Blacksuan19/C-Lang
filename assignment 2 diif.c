@@ -15,7 +15,7 @@ int main()
 	dia_small = GetDiameter(); //function call.
 	printf("Enter diameter of big pizza <in inches>: ");
 	dia_big = GetDiameter();
-	//now we ge the price
+	//now we get the price
 	GetPrice();
 	//now will calculate the unit price.
 	unit_price_s = CalclulateUnitPrice(dia_small, price_s); //function call.
@@ -44,7 +44,7 @@ float CalclulateUnitPrice(int x, float y)
 	float c;
 	area = PI * (x / 2) * (x / 2); //first calculate the area (since its a circle)
 	c = y / area; // calculating the unit price
-	return c; // return the user inputed value
+	return c; // return calculated value
 }
 float Compare(float x, float z)
 {
