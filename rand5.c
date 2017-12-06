@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 char passwd[5];
-int i;
+int s;
 char string();
 int main()
 {
@@ -14,9 +14,9 @@ int main()
 char string()
 {
 
-	for (i = 0; i < 5; i++)
+	for (s = 0; s < 5; s++)
 	{
-		passwd[i] = (rand() % 26) + 'A';
+		passwd[s] = (rand() % 26) + 'A';
 	}
 
 }
