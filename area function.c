@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define PI 3.142
-float  Area();
+float Area();
 float radius, r, area;
 int volume;
 int main()
