@@ -18,4 +18,5 @@ char string()
 	{
 		passwd[i] = (rand() % 26) + 'A';
 	}
+
 }
