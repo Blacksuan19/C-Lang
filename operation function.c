@@ -1,3 +1,4 @@
+// do something to two numbers according to the operator enterd by user in function 
 #include <stdio.h>
 int num1, num2, result;
 char op;

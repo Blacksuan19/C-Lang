@@ -1,3 +1,4 @@
+// determine if a number is odd or even using a function
 #include<stdio.h>
 
 int Number(int);

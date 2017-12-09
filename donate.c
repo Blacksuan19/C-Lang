@@ -1,3 +1,4 @@
+// calculate you donations 
 #include <stdio.h>
 int Age();
 int main(int argc, char const *argv[])

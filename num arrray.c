@@ -1,3 +1,4 @@
+// read and print 5 names stored in an array
 #include<stdio.h>
 char a[5],i;
 void display()

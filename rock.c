@@ -1,3 +1,4 @@
+// simple rock paper scissors
 #include <stdio.h>
 int main()
 {	//initialization

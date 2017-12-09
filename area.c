@@ -1,3 +1,4 @@
+// calculate area according to radius
 #include <stdio.h>
 #define PI 3.142
 int main()

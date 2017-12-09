@@ -1,3 +1,4 @@
+// print current system day
 #include <time.h>
 #include <stdio.h>
 

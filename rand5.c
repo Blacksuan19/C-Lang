@@ -1,3 +1,4 @@
+// generate a random 5 string password
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>

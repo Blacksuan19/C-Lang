@@ -1,3 +1,4 @@
+// print a sequence of numbers
 #include <stdio.h>
 int main()
 {

@@ -1,8 +1,6 @@
+// calorie calculator
 #include "stdio.h"
 #include <string.h>
-/*dont have any C memes so this is going to be damn boaring -_-*/
-/* i'll use an if statement even though we are not there yet */
-/* this thing calculates the amount of needed calories per day according to the basic metabolic rate (MBR)*/
 int main()
 {
 	int age, height, total_male, total_female;

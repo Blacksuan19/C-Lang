@@ -10,6 +10,7 @@ Group members:
 // some parts don't have comments because they are self explanatory.
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h> // for comparing strings.
 #include <time.h> // getting system time and also random number generation.
 #define DEPOSIT 80 // the deposit amount if you have insurance.
@@ -37,6 +38,7 @@ int main()
 	printf("Please enter your first name: "); // first name so i wont call your whole name everytime i use the name variable
 	scanf("%s", &name);
 	Line();// function call.
+	sleep(2);
 	printf("How can i help you today? (checkup or meet): ");
 	scanf("%s", &choice);
 	if (strcmp(choice, "checkup") == 0)
@@ -48,12 +50,15 @@ int main()
 		printf("Do you have insurance? (yes or no): ");
 		scanf("%s", &insurance_yn);
 		//checking for insurance
+		sleep(2);
 		if (strcmp(insurance_yn, "yes") == 0)
 		{
 			printf("you have to make RM%d deposit \n", DEPOSIT);
 			printf("in case your insurance didn't cover all the expenses\n");
+			sleep(1);
 			Sch_meet(); //function call.
 			printf("Please fill up the doctor's form.\n");
+			sleep(1);
 			Line(); // function call.
 			//doctor's form
 			printf("Enter your age: ");
@@ -64,10 +69,12 @@ int main()
 			scanf("%d", &passport_nm);
 			printf("Please enter your insurance number: ");
 			scanf("%d", &insurance_nm);
+			sleep(2);
 			total_doc_in = total_doc - (total_doc / 4); //25% off if you have insurance
 			printf("Your total payment is: RM%d\n", total_doc_in);
 			printf("Please wait until we call your number.\n");
 			Line(); // function call.
+			sleep(5);
 			printf("number %d Please go to the doctor's room\nThank You!\n", id_num);
 		}
 		else if (strcmp(insurance_yn, "no") == 0)
@@ -82,32 +89,40 @@ int main()
 			scanf("%d", &phone_nm);
 			printf("Please enter your passport/I-CAD number (without the first character): ");
 			scanf("%d", &passport_nm);
+			sleep(1);
 			printf("Your total payment is: RM%d\n", total_doc);
+			sleep(1);
 			printf("How would you like to pay? ");
 			scanf("%s", &pay_method); // whatever payment method you want (credit cash or anything )
 			printf("Okay please wait until we call your number.\n");
 			Line(); // function call.
+			sleep(5);
 			printf("number %d Please go to the doctor's room\nThank You!\n", id_num);
 		}
 		printf("Hello %s my name is Dr. Mohammed...\n", name);
 		Equal(); // function call.
 		printf("Hope you doing well...\n");
+		sleep(3);
 		printf("do you have diabetes? (yes or no): ");
 		scanf("%s", &diabetes_yn);
 		if (strcmp(diabetes_yn, "yes") == 0)
 		{
 			Line(); // function call.
 			printf("Okay we will do some regular tests to see whats wrong. \n");
+			sleep(1);
 			printf("which type of diabetes do you have? (1 or 2): ");
 			scanf("%d", &diabetes_type);
-			/*used a while loops instead of an if-else statement for diversity, both get the job done perfectly */
+			/* used a while loops instead of an if-else statement for diversity, both get the job done perfectly */
 			while (diabetes_type == 1)
 			{
 				/* type one is lack of insulin
 				so you give the patient a drug that will help his body produce insulin or just give him insulin */
+				sleep(2);
 				printf("Okay So, Your body is lacking insulin\n");
 				Line(); // function call.
+				sleep(1);
 				printf("I will give you Lantus subcutaneous, which will help your body produce more insulin\n");
+				sleep(1);
 				printf("Here is your prescription please go to the pharmacy to  get your medicine \nThank you have a nice day!!\n");
 				Pharmacy(); // function call.
 				break;
@@ -121,10 +136,15 @@ int main()
 				your health your body will be able to observe insulin better
 				also there are drugs that help with that */
 				printf("Your body can't use insulin effectively \n");
+				sleep(1);
 				printf("You have to maintain a healthy life style by exercising regularly");
+				sleep(1);
 				printf("And eating healthy food like vegetables and whole grains\n");
-				printf("I also have to give you Metformin\n"); // also did research on this!!.
+				sleep(1);
+				printf("I also have to give you Metformin\n");
+				sleep(1);
 				printf("It will improve your body's tissue sensitivity to insulin so it can use \n");
+				sleep(1);
 				printf("Please go to the Pharmacy to get your medicine \nThank you have a nice day!!");
 				Pharmacy(); // function call.
 				break;
@@ -147,6 +167,7 @@ void Checkup()
 	scanf("%s", &gender);
 	//asked for gender first because its the main difference in the calculations and which prefix to use.
 	Line(); // function call.
+	sleep(2);
 	if (strcmp(gender, "male") == 0)
 	{
 		printf("Welcome Mr. %s\n", name);
@@ -159,6 +180,7 @@ void Checkup()
 		printf("Please enter your blood type: ");
 		scanf("%s", &blood_type);
 		Line(); // function call.
+		sleep(3);
 		bmr_male = (float) 10 * weight + 6.25 * height - 5 * age + 5;//bmr formula
 		printf("Your amount of needed calories per day according to (BMR) is: %d\n", bmr_male); //basal metabolic rate (BMR)
 		height_m = height / 100; //convert height from cm to meter because its what bmi uses.
@@ -174,6 +196,7 @@ void Checkup()
 		bmi < 35 ? printf("Your weight status is : Obesity, you have weight issues and unless you act soon it will cause health issues for you\n") :
 		bmi < 18.5, bmi < 25, bmi < 30, bmi < 35; printf("\aYour total payment is: RM%d\n", phy_check_price); // print this line in all cases.
 		Equal(); // function call.
+		sleep(2);
 		printf("Would you like to schedule another checkup next month? (yes or no) "); //check for reschedule.
 		scanf("%s", &reschedule);
 		if (strcmp(reschedule, "yes") == 0)
@@ -182,6 +205,7 @@ void Checkup()
 		}
 		else if (strcmp(reschedule, "no") == 0)
 		{
+			sleep(1);
 			printf("Okay, Thank You!!\n");
 			printf("Have a nice day!!\n");
 		}
@@ -199,6 +223,7 @@ void Checkup()
 		printf("Please enter your blood type: ");
 		scanf("%s", &blood_type);
 		Line(); // function call.
+		sleep(3);
 		bmr_female = (float) 10 * weight + 6.25 * height - 5 * age - 161;//bmr formula
 		printf("Your amount of needed calories per day according to (MBR) is: %d\n", bmr_female);
 		height_m = height / 100; //covert height from cm to meter for bmi.
@@ -215,6 +240,7 @@ void Checkup()
 		bmi < 35 ? printf("Your weight status is : Obesity, you have weight issues and unless you act soon it will cause health issues for you\n") :
 		bmi < 18.5, bmi < 25, bmi < 30, bmi < 35; printf("\aYour total payment is: RM%d\n", phy_check_price); // print this line in all cases.
 		Line(); // function call.
+		sleep(2);
 		printf("Would you like to schedule another checkup next month? (yes or no) ");
 		scanf("%s", &reschedule);
 		if (strcmp(reschedule, "yes") == 0)
@@ -224,6 +250,7 @@ void Checkup()
 		}
 		else if (strcmp(reschedule, "no") == 0)
 		{
+			sleep(1);
 			printf("Okay, Thank You!!\n");
 			printf("Have a nice day!!\n");
 		}
@@ -275,6 +302,7 @@ void Reschedule()
 		year = year + 1;
 		mon = mon - 12;
 	}
+	sleep(2);
 	if (week[s] != "Sunday") // comparing an array to a string.
 	{
 		printf("Your next checkup will be a month from now on:\n%s %d %d %d\n", week[s], meet_day, mon + 1, year);
@@ -286,8 +314,10 @@ void Reschedule()
 	else
 	{
 		printf("On %s the doctor is not available\n", week[s]);
+		sleep(1);
 		printf("would you like to reschedule it to the day after or before? ");
 		scanf("%s", &re_day);
+		sleep(1);
 		if (strcmp(re_day, "before") == 0)
 		{
 			printf("Your next checkup will be on Saturday %d %d %d\n", meet_day - 1, mon + 1, year);
@@ -296,6 +326,7 @@ void Reschedule()
 		{
 			printf("Your next checkup will be on Monday %d %d %d\n", meet_day + 1, mon + 1, year);
 		}
+		sleep(2);
 	}
 	printf("Your identification number is %d\n", id_num);
 	printf("Thank you!!\n");
@@ -312,6 +343,7 @@ void Sch_meet()
 	}
 	else
 	{
+		sleep(3);
 		srand(time(NULL)); // set run time to null so you get a different number each time you run the program.
 		id_num = 1 + rand() % (1 - 1000 + 1); // generate a number between 1 and 1000.
 		printf("Okay, your new identification number is : %d\n", id_num);
@@ -336,6 +368,7 @@ void Symptoms()
 	strcpy(symptoms_array[10], "vomiting");
 	Line(); // function call.
 	//print out the symptoms so user can choose
+	sleep(3);
 	printf("List of Symptoms: \n");
 	// do while instead of for loop for diversity.
 	do {
@@ -345,6 +378,7 @@ void Symptoms()
 
 	printf("how many of these symptoms do you have?\n");
 	scanf("%d", &symp_count);
+	sleep(2);
 	printf("please enter the number(s) corresponding to the symptom(s) you have \n");
 	for (s = 1; s <= symp_count; ++s) // store the user inputed number in a space on the array depending on how many of these symptoms he has.
 	{
@@ -354,6 +388,7 @@ void Symptoms()
 	/* symptoms 6 and 7 indicate that its type 1 while symptoms 8 9 and 10 indicate that its type 2 this for loop will check the whole
 	   sypmtoms_array array according to how many symptoms he inputed to see if the user has chosen any of these numbers together,
 	   other symptoms are common on both types and other sicknesses as well. */
+	sleep(3);
 	for (s = 1; s <= symp_count; ++s)
 	{
 		if (symptoms_user[s] == 6 || symptoms_user[s] == 7)
@@ -361,15 +396,18 @@ void Symptoms()
 			// divided the printf's for easier code readability
 			printf("from your symptoms i can see that you might ");
 			printf("You have diabetes type 2\n");
+			sleep(2);
 			Line(); // function call.
 			printf("it is caused by the body not able to observe insulin effectively\n");
 			Equal(); // function call.
+			sleep(2);
 			printf("from now on you need to eat healthy and exercises regularly \n");
-			printf("so far there is not definite cure for this but \n");
-			Line(); // function call.
+			sleep(2);
 			printf("i will give you some medications that will help you feel better \n");
+			sleep(1);
 			printf("please go to the pharmacy to get these medications \n i hope you get well soon  \n have a nice day\n");
 			Equal(); // function call.
+			sleep(2);
 			printf("Also please come back here every month so i can do some regular tests\n");
 			diabetes_type = 2; // this is for the medicine price on the pharmacy function.
 			Pharmacy(); // function call.
@@ -380,16 +418,21 @@ void Symptoms()
 			// divided the printf's for easier code readability
 			printf("from your symptoms i can see that you might ");
 			printf("You have diabetes type 1\n");
+			sleep(2);
 			Line(); // function call.
 			printf("it can be inherited across the family\n");
+			sleep(1);
 			printf("but also can be caused by your immune system destroying beta cells in your pancreas\n");
 			Equal(); // function call.
-			printf("so far there is no definite cure for it \n");
+			sleep(1);
 			printf("just try to keep your blood sugar levels within the healthy range \n");
 			Line(); // function call.
+			sleep(1);
 			printf("i will describe some insulin injections for you \n");
+			sleep(1);
 			printf("please go to the pharmacy to get them \n i hope you get well soon \n have a nice day \n");
 			Equal(); // function call.
+			sleep(2);
 			printf("Also please come back here every month so i can do some regular tests\n");
 			diabetes_type = 1; // this is for the medicine price on the pharmacy function.
 			Pharmacy(); // function call.
@@ -399,6 +442,7 @@ void Symptoms()
 		{
 			// divided the printf's for easier code readability
 			printf("okay from your symptoms i can see that it's not diabetes \n");
+			sleep(2);
 			printf("so i will redirect you to a normal hospital\n");
 			printf("thank you, hope you get well soon\n");
 			break;
@@ -416,15 +460,19 @@ void Pharmacy()
 	   of usage and storage there are some medications which can be used by people with both types of diabetes. */
 	printf("Welcome %s to %s pharmacy how can i help you?\n", name, h_name);
 	Line(); // function call.
+	sleep(2);
 	printf("Can i have the prescription please?\n");
+	sleep(3);
 	// will assume that he has already gave the prescription and the pharmacist have already found the medicine.
-	printf("Okay here is your medicine\n");
+	printf("Okay here is your medicine, ");
 	printf("you'll find all the instructions on how to use it inside \n"); // wrote them on the medicine's paper.
 	Line(); // function call.
 	printf("Please try to keep it in a cold, dry place\n");
+	sleep(2);
 	printf("Also please don't mix it with other insulin types \n"); // research.
 	Line(); // function call.
 	//these if statements are for the prices.
+	sleep(2);
 	if (diabetes_type = 1 && strcmp(insurance_yn, "no") == 0)
 	{
 		total_phar = 14.03 * 4.08; // transforming the price from USD to MYR according to exchange rate of 9-12-17
@@ -437,6 +485,7 @@ void Pharmacy()
 		printf("You can bay by cash or credit\n");
 	}
 	// seeing these prices am 100% sure that any insurance company can cover them so i will give back the 80 deposit
+	sleep(2);
 	if (strcmp(insurance_yn, "yes") == 0)
 	{
 		printf("Your insurance company covered the expenses\n");

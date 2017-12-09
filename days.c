@@ -1,3 +1,4 @@
+//determine  how many months is a specific amount of days equal to 
 #include <stdio.h>
 int main()
 {

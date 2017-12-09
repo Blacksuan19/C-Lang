@@ -1,3 +1,4 @@
+// read mouse input (linux only).
 #include <linux/input.h>
 #include <fcntl.h>    
 

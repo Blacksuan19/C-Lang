@@ -1,3 +1,4 @@
+// print current system date.
 #include <stdio.h>
 #include <time.h>
 

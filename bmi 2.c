@@ -1,3 +1,4 @@
+// bmi (body mass index ) calculator
 #include<stdio.h>
 void main()
 {

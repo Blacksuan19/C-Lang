@@ -1,3 +1,4 @@
+// print a sequence of numbers in a function 
 #include <stdio.h>
 int Stop(int, int, int);
 int start, stop, step_by;

@@ -1,3 +1,4 @@
+// do something to two numbers according to the operator enterd by user
 #include <stdio.h>
 int main()
 {

@@ -1,3 +1,4 @@
+// print out system date and day and other things
 #include <time.h>
 #include <stdio.h>
 int main()

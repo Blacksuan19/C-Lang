@@ -1,3 +1,4 @@
+// print week day according to date enterd by user.
 # include <stdio.h>
 #include <unistd.h>
 #include <time.h>
