@@ -1,6 +1,5 @@
 #include <stdio.h>
 #define PRICE 15;
-
 #define DISCOUNT 5;
 
 int tickets;

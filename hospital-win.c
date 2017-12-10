@@ -160,7 +160,7 @@ int main()
 	else
 		// if you enter anything else other that checkup or meet.
 		printf("Invalid option please restart the program and enter a valid option\nThank You!!\n");
-	return 0;
+	system("pause");
 }
 // moved the whole checkup to a separate function so it would be easier to understand and maintain
 void Checkup()
@@ -262,6 +262,8 @@ void Checkup()
 	}
 	Equal(); // function call.
 	Line(); // function call.
+	system(pause);
+	return 0;
 }
 /* moved the rescheduling part to a separate function
    because its long and complicated and its just easier to maintain. */
