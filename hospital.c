@@ -8,7 +8,7 @@ Group members:
  6.MOHAMMED GAAFAR MUSOUD, 1624491
 */
 // some parts don't have comments because they are self explanatory.
-// sleep pauses the program for a specific amount of seconds
+// sleep pauses the program for a specific amount of seconds.
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
