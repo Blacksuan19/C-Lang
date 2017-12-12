@@ -9,9 +9,9 @@ Group members:
 */
 // some parts don't have comments because they are self explanatory.
 // sleep pauses the program for a specific amount of milliseconds
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include <stdio.h> //standard library
+#include <stdlib.h> // standard library
+#include <unistd.h> // standard library
 #include <string.h> // for comparing strings.
 #include <time.h> // getting system time and also random number generation.
 #include <windows.h>

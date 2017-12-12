@@ -9,9 +9,9 @@ Group members:
 */
 // some parts don't have comments because they are self explanatory.
 // sleep pauses the program for a specific amount of seconds.
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include <stdio.h> // standard library
+#include <stdlib.h> // standard library
+#include <unistd.h>  // standard library
 #include <string.h> // for comparing strings.
 #include <time.h> // getting system time and also random number generation.
 #define DEPOSIT 80 // the deposit amount if you have insurance.
@@ -234,7 +234,7 @@ void Checkup()
 		Line(); // function call.
 		printf("Your current body mass index is : %.3f\n", bmi);
 		/*yeah i know i should've used an if else statement
-		  but this easier and better because you can just pass conditions on the fly also for diversity . */
+		  but this is easier and better because you can just pass conditions on the fly also for diversity . */
 		bmi < 18.5 ? printf("Your weight status is : Underweight, you need to start eating more in order to become healthy\n") :
 		bmi < 25 ? printf("Your weight status is : Normal weight, everything seems normal keep it up \n") :
 		bmi < 30 ? printf("Your weight status is : Overweight, you need to slow down and maintain your health\n") :
