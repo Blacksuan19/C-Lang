@@ -1,23 +1,23 @@
 /*
 Group members:
- 1.ABUBAKAR YAGOUB IBRAHIM OMER, 1625897
- 2.AYHAM KHADER ALI, 1637927
- 3.GEHAD ABBAS SEIDAHMED,1621469
- 4.ABDUL-RAHMAN FAYYADAH, 1628735
- 5.ALI MOHAMMED ALATTAS, 1536481
- 6.MOHAMMED GAAFAR MUSOUD, 1624491
+	 1.ABUBAKAR YAGOUB IBRAHIM OMER, 1625897
+ 	2.AYHAM KHADER ALI, 1637927
+ 	3.GEHAD ABBAS SEIDAHMED,1621469
+ 	4.ABDUL-RAHMAN FAYYADAH, 1628735
+ 	5.ALI MOHAMMED ALATTAS, 1536481
+ 	6.MOHAMMED GAAFAR MUSOUD, 1624491
 */
 // some parts don't have comments because they are self explanatory.
-// sleep pauses the program for a specific amount of milliseconds
+// Sleep pauses the program for a specific amount of milliseconds
 #include <stdio.h> //standard library
 #include <stdlib.h> // standard library
 #include <unistd.h> // standard library
 #include <string.h> // for comparing strings.
-#include <time.h> // getting system time and also random number generation.
-#include <windows.h>
+#include <time.h> // getting system time and also random number generation everytime.
+#include <windows.h> // for the Sleep function
 #define DEPOSIT 80 // the deposit amount if you have insurance.
 /* global definition for everything so that all functions can access it.
-   i have reused some variable in some cases ex:id_num. */
+   i have reused some variables in some cases ex:id_num. */
 char name[100], choice[20], gender[10], insurance_yn[5], blood_type[5], reschedule[5], week_day[20], re_day[10], sch_meet[10];
 char h_name[50] = "Jannah Diabetes Care Center", pay_method[20], diabetes_yn[10], answer_doc[1000], symptoms_array[11][100];
 int phone_nm, insurance_nm, age, bmr_male, bmr_female, total_doc_in, passport_nm, cash_deposit, id_num, meet_day, day, deposit, symp_count;
@@ -189,6 +189,7 @@ void Checkup()
 		bmi = weight / (height_m * height_m);//bmi formula.
 		printf("Your blood type is %s\n", blood_type);// don't have anything much to do with it so just gonna give it back
 		Line(); // function call.
+		Sleep( 2 * 1000);
 		printf("Your current body mass index is : %.3f\n", bmi);
 		/*yeah i know i should've used an if else statement
 		  but this easier and better because you can just pass conditions on the fly also for diversity . */
@@ -233,6 +234,7 @@ void Checkup()
 		Line(); // function call.
 		printf("Your blood type is %s\n", blood_type);// don't have anything much to do with it so just gonna give it back
 		Line(); // function call.
+		Sleep(2 * 1000);
 		printf("Your current body mass index is : %.3f\n", bmi);
 		/*yeah i know i should've used an if else statement
 		  but this easier and better because you can just pass conditions on the fly also for diversity . */
@@ -289,7 +291,6 @@ void Reschedule()
 	year = tm.tm_year + 1900; // get real year.
 	mon = tm.tm_mon + 1; // get real month.
 	meet_day = day; // since the next meeting will be in 4 weeks so it will be on the same week day.
-	month[1] = 29 ; // this year's (2017) February was 29 days so we have to change that.
 	/* the for loop is to convert the day to a number between 0 and 6
 	so that it can be passed to the week array and get the week day. */
 	for (i = 0 ; i < mon - 1 ; i++)
@@ -371,8 +372,8 @@ void Symptoms()
 	strcpy(symptoms_array[9], "nausea");
 	strcpy(symptoms_array[10], "vomiting");
 	Line(); // function call.
-	//print out the symptoms so user can choose
 	Sleep(3 * 1000);
+	//print out the symptoms so user can choose
 	printf("List of Symptoms: \n");
 	// do while instead of for loop for diversity.
 	do {
@@ -469,7 +470,8 @@ void Pharmacy()
 	Sleep(3 * 1000);
 	// will assume that he has already gave the prescription and the pharmacist have already found the medicine.
 	printf("Okay here is your medicine, ");
-	printf("you'll find all the instructions on how to use it inside \n"); // wrote them on the medicine's paper.
+	Sleep(1 * 1000);
+	printf("You'll find all the instructions on how to use it inside \n"); // wrote them on the medicine's paper.
 	Line(); // function call.
 	printf("Please try to keep it in a cold, dry place\n");
 	Sleep(2 * 1000);
@@ -480,7 +482,7 @@ void Pharmacy()
 	if (diabetes_type = 1 && strcmp(insurance_yn, "no") == 0)
 	{
 		total_phar = 14.03 * 4.08; // transforming the price from USD to MYR according to exchange rate of 9-12-17
-		printf("Your total is %.2f\n", total_phar);
+		printf("Your total payment is %.2f\n", total_phar);
 	}
 	else if (diabetes_type = 2 && strcmp(insurance_yn, "no") == 0)
 	{
@@ -493,6 +495,7 @@ void Pharmacy()
 	if (strcmp(insurance_yn, "yes") == 0)
 	{
 		printf("Your insurance company covered the expenses\n");
+		Sleep(1 * 1000);
 		printf("so here is your RM%d deposit\n", DEPOSIT);
 	}
 }

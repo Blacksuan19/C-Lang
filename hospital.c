@@ -1,11 +1,11 @@
 /*
 Group members:
- 1.ABUBAKAR YAGOUB IBRAHIM OMER, 1625897
- 2.AYHAM KHADER ALI, 1637927
- 3.GEHAD ABBAS SEIDAHMED,1621469
- 4.ABDUL-RAHMAN FAYYADAH, 1628735
- 5.ALI MOHAMMED ALATTAS, 1536481
- 6.MOHAMMED GAAFAR MUSOUD, 1624491
+	 1.ABUBAKAR YAGOUB IBRAHIM OMER, 1625897
+ 	2.AYHAM KHADER ALI, 1637927
+ 	3.GEHAD ABBAS SEIDAHMED,1621469
+ 	4.ABDUL-RAHMAN FAYYADAH, 1628735
+ 	5.ALI MOHAMMED ALATTAS, 1536481
+ 	6.MOHAMMED GAAFAR MUSOUD, 1624491
 */
 // some parts don't have comments because they are self explanatory.
 // sleep pauses the program for a specific amount of seconds.
@@ -50,7 +50,7 @@ int main()
 	{
 		printf("Do you have insurance? (yes or no): ");
 		scanf("%s", &insurance_yn);
-		//checking for insurance
+		//checking for insurance.
 		sleep(2);
 		if (strcmp(insurance_yn, "yes") == 0)
 		{
@@ -94,7 +94,7 @@ int main()
 			printf("Your total payment is: RM%d\n", total_doc);
 			sleep(1);
 			printf("How would you like to pay? ");
-			scanf("%s", &pay_method); // whatever payment method you want (credit cash or anything )
+			scanf("%s", &pay_method); // whatever payment method you want (credit, cash or anything )
 			printf("Okay please wait until we call your number.\n");
 			Line(); // function call.
 			sleep(5);
@@ -188,6 +188,7 @@ void Checkup()
 		bmi = weight / (height_m * height_m);//bmi formula.
 		printf("Your blood type is %s\n", blood_type);// don't have anything much to do with it so just gonna give it back
 		Line(); // function call.
+		sleep(2);
 		printf("Your current body mass index is : %.3f\n", bmi);
 		/*yeah i know i should've used an if else statement
 		  but this easier and better because you can just pass conditions on the fly also for diversity . */
@@ -232,6 +233,7 @@ void Checkup()
 		Line(); // function call.
 		printf("Your blood type is %s\n", blood_type);// don't have anything much to do with it so just gonna give it back
 		Line(); // function call.
+		sleep(2);
 		printf("Your current body mass index is : %.3f\n", bmi);
 		/*yeah i know i should've used an if else statement
 		  but this is easier and better because you can just pass conditions on the fly also for diversity . */
@@ -286,7 +288,6 @@ void Reschedule()
 	year = tm.tm_year + 1900; // get real year.
 	mon = tm.tm_mon + 1; // get real month.
 	meet_day = day; // since the next meeting will be in 4 weeks so it will be on the same week day.
-	month[1] = 29 ; // this year's (2017) February was 29 days so we have to change that.
 	/* the for loop is to convert the day to a number between 0 and 6
 	so that it can be passed to the week array and get the week day. */
 	for (i = 0 ; i < mon - 1 ; i++)
