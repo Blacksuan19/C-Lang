@@ -17,8 +17,8 @@ Group members:
 #define DEPOSIT 80 // the deposit amount if you have insurance.
 /* global definition for everything so that all functions can access it.
    i have reused some variable in some cases ex:id_num. */
-char name[100], choice[20], gender[10], insurance_yn[5], blood_type[5], reschedule[5], week_day[20], re_day[10], sch_meet[10];
-char h_name[50] = "Jannah Diabetes Care Center", pay_method[20], diabetes_yn[10], answer_doc[1000], symptoms_array[11][100];
+char name[100], choice[20], gender[10], insurance_yn[5], blood_type[5], reschedule[5], week_day[20], re_day[10], sch_meet[10], diabetes_yn[10], answer_doc[1000], pay_method;
+char h_name[50] = "Jannah Diabetes Care Center", symptoms_array[11][100];
 int phone_nm, insurance_nm, age, bmr_male, bmr_female, total_doc_in, passport_nm, cash_deposit, id_num, meet_day, day, deposit, symp_count;
 int phy_check_price = 35, total_doc = 50, diabetes_type, symptoms_user[11] = {0};
 float bmi, weight, height, height_m, total_phar;

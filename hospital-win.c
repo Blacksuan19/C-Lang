@@ -9,17 +9,17 @@ Group members:
 */
 // some parts don't have comments because they are self explanatory.
 // Sleep pauses the program for a specific amount of milliseconds
-#include <stdio.h> //standard library
+#include <stdio.h> // standard library
 #include <stdlib.h> // standard library
 #include <unistd.h> // standard library
 #include <string.h> // for comparing strings.
 #include <time.h> // getting system time and also random number generation everytime.
-#include <windows.h> // for the Sleep function
+#include <windows.h> // for the Sleep function (finally found the file it belongs to!)
 #define DEPOSIT 80 // the deposit amount if you have insurance.
 /* global definition for everything so that all functions can access it.
    i have reused some variables in some cases ex:id_num. */
-char name[100], choice[20], gender[10], insurance_yn[5], blood_type[5], reschedule[5], week_day[20], re_day[10], sch_meet[10];
-char h_name[50] = "Jannah Diabetes Care Center", pay_method[20], diabetes_yn[10], answer_doc[1000], symptoms_array[11][100];
+char name[100], choice[20], gender[10], insurance_yn[5], blood_type[5], reschedule[5], week_day[20], re_day[10], sch_meet[10], pay_method[20], diabetes_yn[10];
+char h_name[50] = "Jannah Diabetes Care Center",  answer_doc[1000], symptoms_array[11][100];
 int phone_nm, insurance_nm, age, bmr_male, bmr_female, total_doc_in, passport_nm, cash_deposit, id_num, meet_day, day, deposit, symp_count;
 int phy_check_price = 35, total_doc = 50, diabetes_type, symptoms_user[11] = {0};
 float bmi, weight, height, height_m, total_phar;
@@ -161,6 +161,7 @@ int main()
 		// if you enter anything else other that checkup or meet.
 		printf("Invalid option please restart the program and enter a valid option\nThank You!!\n");
 	system("pause");
+	return 0;
 }
 // moved the whole checkup to a separate function so it would be easier to understand and maintain
 void Checkup()
@@ -250,7 +251,7 @@ void Checkup()
 		if (strcmp(reschedule, "yes") == 0)
 		{
 
-			Reschedule();//function call
+			Reschedule(); // function call
 		}
 		else if (strcmp(reschedule, "no") == 0)
 		{
@@ -264,11 +265,9 @@ void Checkup()
 	}
 	Equal(); // function call.
 	Line(); // function call.
-	system(pause);
-	return 0;
 }
 /* moved the rescheduling part to a separate function
-   because its long and complicated and its just easier to maintain. */
+     because its long and complicated and its just easier to maintain. */
 void Reschedule()
 {
 	// an array for months.
@@ -297,7 +296,6 @@ void Reschedule()
 		s = s + month[i] ;
 	s = s + (day + year + (year / 4) - 2) ;
 	s = s % 7 ;
-	// on Sunday the doctor is not available.
 	Line(); // function call.
 	// this if statement will only run on December or if your system date is broken.
 	if (mon = 12)
@@ -308,6 +306,7 @@ void Reschedule()
 		mon = mon - 12;
 	}
 	Sleep(2 * 1000);
+	// on Sunday the doctor is not available.
 	if (week[s] != "Sunday") // comparing an array to a string.
 	{
 		printf("Your next checkup will be a month from now on:\n%s %d %d %d\n", week[s], meet_day, mon + 1, year);
@@ -320,7 +319,7 @@ void Reschedule()
 	{
 		printf("On %s the doctor is not available\n", week[s]);
 		Sleep(1 * 1000);
-		printf("would you like to reschedule it to the day after or before? ");
+		printf("would you like to reschedule it to the day (after or before)? ");
 		scanf("%s", &re_day);
 		Sleep(1 * 1000);
 		if (strcmp(re_day, "before") == 0)
@@ -336,7 +335,7 @@ void Reschedule()
 	printf("Your identification number is %d\n", id_num);
 	printf("Thank you!!\n");
 }
-
+//  check if you have scheduled this meeting or not 
 void Sch_meet()
 {
 	printf("have you already scheduled this meeting? (yes or no): ");
@@ -345,6 +344,7 @@ void Sch_meet()
 	{
 		printf("enter your identification number: \n");
 		scanf("%d", & id_num);
+		// will just keep it for later on.
 	}
 	else
 	{
@@ -354,6 +354,7 @@ void Sch_meet()
 		printf("Okay, your new identification number is : %d\n", id_num);
 	}
 }
+//  if you don't have diabetes already will use this function to determine which type you have and what actions you have  to take.
 void Symptoms()
 {
 	int a = 0, s; // for the loops.

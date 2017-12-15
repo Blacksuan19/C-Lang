@@ -267,7 +267,7 @@ void Drinks()
 	printf("List of drinks:\n");
 	do
 	{
-		printf("[%d] is %s\n", i, drinks[i]);
+		printf(" Drink number %d is %s\n", i, drinks[i]);
 		++i;
 	} while (i <= 14);
 	printf("how many drinks you want? ");
@@ -296,12 +296,12 @@ void Dishes()
 	printf("List of dishes:\n");
 	do
 	{
-		printf("[%d] is %s\n", i, dishes[i]);
+		printf("Dish number %d is %s\n", i, dishes[i]);
 		++i;
 	} while (i <= 9);
 	printf("how many dishes you want? ");
 	scanf("%d", &dishes_count);
-	printf("please enter the number(s) of the drinks from the menu\n");
+	printf("please enter the number(s) of the dishe(s) from the menu\n");
 	for (x = 1; x <= dishes_count; ++x)
 	{
 		scanf("%s", &dishes_user[x]);

@@ -1,3 +1,12 @@
+/*
+Group Members:
+ 	1.ABUBAKAR YAGOUB IBRAHIM OMER, 1625897
+	 2.AYHAM KHADER ALI, 1637927
+ 	3.GEHAD ABBAS SEIDAHMED,1621469
+ 	4.ABDUL-RAHMAN FAYYADAH, 1628735
+ 	5.MOHAMMED GAAFAR MUSOUD, 1624491
+ 	6.
+*/
 #include <stdio.h>
 #define PI 3.142 // pi value 
 //global variable definition so they can be used across all the functions.
