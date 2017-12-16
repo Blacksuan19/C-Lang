@@ -1,6 +1,6 @@
 /*
 Group members:
-	 1.ABUBAKAR YAGOUB IBRAHIM OMER, 1625897
+	1.ABUBAKAR YAGOUB IBRAHIM OMER, 1625897
  	2.AYHAM KHADER ALI, 1637927
  	3.GEHAD ABBAS SEIDAHMED,1621469
  	4.ABDUL-RAHMAN FAYYADAH, 1628735
@@ -340,7 +340,7 @@ void Reschedule()
 	Sleep(1 * 1000);
 	printf("Thank you!!\n");
 }
-//  check if you have scheduled this meeting or not
+//  check if you have scheduled this meeting or not.
 void Sch_meet()
 {
 	printf("have you already scheduled this meeting? (yes or no): ");
@@ -360,7 +360,7 @@ void Sch_meet()
 		printf("Okay, your new identification number is : %d\n", id_num);
 	}
 }
-//  if you don't have diabetes already will use this function to determine which type you have and what actions you have  to take.
+//  if you don't have diabetes already will use this function to determine which type you have and what actions you has  to be taken.
 void Symptoms()
 {
 	int a = 0, s; // for the loops.
@@ -405,20 +405,17 @@ void Symptoms()
 		other symptoms are common on both types and other sicknesses as well. */
 		if (symptoms_user[s] == 6 || symptoms_user[s] == 7)
 		{
-			// divided the printf's for easier code readability
-			printf("from your symptoms i can see that you might ");
-			printf("You have diabetes type 2\n");
+			printf("from your symptoms i can see that you might have diabetes type 2\n");
 			Sleep(2 * 1000);
 			Line(); // function call.
 			printf("it is caused by the body not able to observe insulin effectively\n");
-			Equal(); // function call.
 			Sleep(2 * 1000);
 			printf("from now on you need to eat healthy and exercises regularly \n");
 			Sleep(2 * 1000);
 			printf("i will give you some medications that will help you feel better \n");
 			Sleep(1 * 1000);
 			printf("please go to the pharmacy to get these medications \n i hope you get well soon  \n have a nice day\n");
-			Equal(); // function call.
+			Line(); // function call
 			Sleep(2 * 1000);
 			printf("Also please come back here every month so i can do some regular tests\n");
 			diabetes_type = 2; // this is for the medicine price on the pharmacy function.
@@ -427,15 +424,12 @@ void Symptoms()
 		}
 		if (symptoms_user[s] == 8 || symptoms_user[s] == 9 || symptoms_user[s] == 10)
 		{
-			// divided the printf's for easier code readability
-			printf("From your symptoms i can see that you might ");
-			printf("ou have diabetes type 1\n");
+			printf("From your symptoms i can see that you might  have diabetes type 1\n");
 			Sleep(2 * 1000);
 			Line(); // function call.
 			printf("It can be inherited across the family\n");
 			Sleep(1 * 1000);
 			printf("But also can be caused by your immune system destroying beta cells in your pancreas\n");
-			Equal(); // function call.
 			Sleep(1 * 1000);
 			printf("Just try to keep your blood sugar levels within the healthy range \n");
 			Line(); // function call.
@@ -443,7 +437,6 @@ void Symptoms()
 			printf("I will describe some insulin injections for you \n");
 			Sleep(1 * 1000);
 			printf("Please go to the pharmacy to get them \n i hope you get well soon \n have a nice day \n");
-			Equal(); // function call.
 			Sleep(2 * 1000);
 			printf("Also please come back here every month so i can do some regular tests\n");
 			diabetes_type = 1; // this is for the medicine price on the pharmacy function.
@@ -455,8 +448,9 @@ void Symptoms()
 			//  if his symptoms don't match neither diabetes types transfer the user to a regular hospital
 			// divided the printf's for easier code readability
 			printf("Okay from your symptoms i can see that it's not diabetes \n");
-			Sleep(2);
+			Sleep(2 * 100);
 			printf("So i will transfer you to a normal hospital\n");
+			Sleep(1 * 1000);
 			printf("Thank you, hope you get well soon\n");
 			break;
 		}
@@ -469,6 +463,7 @@ void Symptoms()
 // pharmacy functions because i have to call it few times.
 void Pharmacy()
 {
+	Sleep(1 * 1000);
 	printf("Welcome %s to %s pharmacy how can i help you?\n", name, h_name);
 	Line(); // function call.
 	Sleep(2 * 1000);

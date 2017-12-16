@@ -21,42 +21,43 @@ int main()
 {
 	printf("Welcome To IIUM Pizza\n\n");
 	printf("Enter diameter of small pizza <in inches>: ");
-	dia_small = GetDiameter(); // function call.
+	dia_small = GetDiameter(); //function call.
 	printf("Enter diameter of big pizza <in inches>: ");
-	dia_big = GetDiameter(); // function call.
-	printf("Enter the Prize of small pizza <RM>: ");
-	price_s = GetPrice(); // function call.
-	printf("Enter the price of big pizza <RM>:  ");
-	price_b = GetPrice(); // function call.
-	// now will calculate the unit price.
-	unit_price_s = CalclulateUnitPrice(dia_small, price_s);  // function call.
-	unit_price_b = CalclulateUnitPrice(dia_big, price_b);  // function call.
+	dia_big = GetDiameter();
+	//now we get the price
+	GetPrice();
+	//now will calculate the unit price.
+	unit_price_s = CalclulateUnitPrice(dia_small, price_s); //function call.
+	unit_price_b = CalclulateUnitPrice(dia_big, price_b); //function call.
 	Compare(unit_price_b, unit_price_s);
 	return 0;
 }
 int GetDiameter()
 {
-	int a;  // temp variable for storing the Diameter
+	int a;
+	//get the pizza diameter
 	scanf("%d", &a);
 	return a; // return the user inputed value
 }
 float GetPrice()
 {
-	float b;  // temp variable for storing the price
-	scanf("%f", &b);
-	return b; // return the user inputed value
+	//get the pizza price.
+	printf("Enter price of big pizza <RM>: ");
+	scanf("%f", &price_s);
+	printf("Enter the Price of small pizza <RM>: ");
+	scanf("%f", &price_b);
 }
 float CalclulateUnitPrice(int x, float y)
 {
-	// calculate unit price.
-	float c; // temp variable for storing the unit price
-	area = PI * (x / 2) * (x / 2); // first calculate the area (since its a circle)
+	//calculate unit price.
+	float c;
+	area = PI * (x / 2) * (x / 2); //first calculate the area (since its a circle)
 	c = y / area; // calculating the unit price
 	return c; // return calculated value
 }
 float Compare(float x, float z)
 {
-	// compare the two unit prices.
+	//compare the two unit prices.
 	if (x < z)
 	{
 		printf("The large one is the better buy.\n");
@@ -65,5 +66,4 @@ float Compare(float x, float z)
 	{
 		printf("The small one is the better buy.\n");
 	}
-
 }
