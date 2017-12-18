@@ -7,7 +7,7 @@ int matrix_1[rows][cols], matrix_2[rows][cols], matrix_3[rows][cols];
 int Operations() ;
 int main()
 {
-	printf("                                                    this program will do a user specified operation on two [%d by %d] user inputed matrixes\n", rows, cols);
+	printf("                                                    this program will do a user specified operation on two [%d by %d] user inputed matrixes\n\n", rows, cols);
 	for (int i = 0; i < rows; ++i)
 	{
 		for (int j = 0; j < cols; ++j)
@@ -83,4 +83,3 @@ int Operations()
 		}
 	}
 }
-// this shit is not finished finish it if you can
