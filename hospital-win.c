@@ -213,7 +213,7 @@ void Checkup()
 		{
 			Sleep(1 * 1000);
 			printf("Okay, Thank You!!\n");
-			Sleep(1 * 1000)
+			Sleep(1 * 1000);
 			printf("Have a nice day!!\n");
 		}
 
