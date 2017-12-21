@@ -4,7 +4,7 @@
 #include <stdlib.h> // standard library.
 #include <unistd.h> // standard library.
 #include <time.h>  // generation of random number.
-#include <windows.h>
+// #include <windows.h>
 #define DISCOUNT 5; // discount value.
 /*global variables definition o they can be used across all function */
 char name[50], person[10], customer[20], room_type[20], resident_action[20], extend_room[20], room_full[20], visit_count[10], rest_yn[10], rest_option[10];
@@ -25,7 +25,7 @@ int main()
 
 	printf("Are you staff or a customer? ");
 	scanf("%s", &person);
-	Sleep(2);
+	sleep(2);
 	if (strcmp(person, "staff") == 0)
 	{
 		Staff();// function call.
@@ -35,7 +35,7 @@ int main()
 	{
 		printf("Are you a new customer or a resident? ");
 		scanf("%s", &customer);
-		Sleep(1);
+		sleep(1);
 		if (strcmp(customer, "new") == 0)
 		{
 			printf("                                               Welcome to Islamic  Malaysian Hotel (IMH)\n\n");
@@ -44,7 +44,7 @@ int main()
 			scanf("%s", &visit_count);
 			if (strcmp(visit_count, "yes") == 0)
 			{
-				Sleep(1);
+				sleep(1);
 				// registration form.
 				printf("Please fill up the registration form\n\n");
 				Line(); // // function call.
@@ -59,7 +59,7 @@ int main()
 				scanf("%d", &phone_nm);
 				printf("For how long are you staying here?  ");
 				scanf("%d", &days);
-				Sleep(1);
+				sleep(1);
 				printf("What type of rooms do you want?\nwe have three types of rooms: single, double and suite");
 				scanf("%s", &room_type);
 				if (strcmp(room_type, "single") == 0)
@@ -76,11 +76,11 @@ int main()
 					room_price = suite_price * days; // calculating the prices
 
 				}
-				Sleep(2);
+				sleep(2);
 				printf("Your total is RM %d\n", room_price);
-				Sleep(1);
+				sleep(1);
 				printf("Okay here is your key and membership card\nThank you!\n");
-				Sleep(1);
+				sleep(1);
 				printf("Would you like to checkout our restaurant? (yes or no) ");
 				scanf("%s", &rest_yn);
 				if (strcmp(rest_yn, "yes") == 0)
@@ -88,7 +88,7 @@ int main()
 					Rest(); // function call.
 				}
 				else if (strcmp(rest_yn, "no") == 0)
-				{	Sleep(2);
+				{	sleep(2);
 					printf("Okay have a nice stay\nThank you!!\n");
 				}
 			}
@@ -100,7 +100,7 @@ int main()
 
 
 	}
-	else if (strcmp(customer, "resident") == 0)
+	if (strcmp(customer, "resident") == 0)
 	{
 		printf("Hello, what would you like to do? (extend or checkout): ");
 		scanf("%s", &resident_action);
@@ -122,7 +122,7 @@ int main()
 				{
 					extend_total = extend_days * suite_price; //calculating price
 				}
-				Sleep(2);
+				sleep(2);
 				printf("Your extended total is RM %d\n", extend_total);
 
 			}
@@ -140,7 +140,7 @@ int main()
 				{
 					extend_total = extend_days * suite_price; // calculating price
 				}
-				Sleep(2);
+				sleep(2);
 				printf("Your extended total is RM %d\n", extend_total);
 
 			}
@@ -158,18 +158,18 @@ int main()
 				{
 					extend_total = extend_days * double_price; // calculating price
 				}
-				Sleep(2);
+				sleep(2);
 				printf("Your extended total is RM %d\n", extend_total);
 
 			}
-			Sleep(1);
+			sleep(1);
 			printf("                                        Thank you!!\n");
 		}
 		else if (strcmp(resident_action, "checkout") == 0)
 		{
-			Sleep(2);
+			sleep(2);
 			printf("Here is your invoice\n");
-			Sleep(1);
+			sleep(1);
 			printf("Thank you for staying in our hotel!\n have a nice trip!\n");
 		}
 	}
@@ -194,7 +194,7 @@ void Staff()
 	{
 		printf("Wrong password please re-enter: ");
 		scanf("%d", &password);
-		Sleep(1);
+		sleep(1);
 	}
 	if (password == staff_pass)
 	{
@@ -237,9 +237,9 @@ void Visit()
 		discount = (room_price / 100) * DISCOUNT;
 		room_price = suite_price * days;
 	}
-	Sleep(2);
+	sleep(2);
 	printf("Your total is RM%d\n", room_price);
-	Sleep(1);
+	sleep(1);
 	printf("Okay here is your key and membership card\nThank you!");
 
 }
@@ -249,7 +249,7 @@ void Rest()
 
 	printf("                                                    Welcome to IMH restaurant\n");
 	printf("                                                 ----------------------------------\n");
-	Sleep(1);
+	sleep(1);
 	printf("How can i help you today?(dish or drink) ");
 	scanf("%s", &rest_option);
 	if (strcmp(rest_option, "drink") == 0)
@@ -259,7 +259,7 @@ void Rest()
 	if (strcmp(rest_option, "dish") == 0)
 	{
 		Dishes(); // function call.
-		Sleep(2);
+		sleep(2);
 		printf("Would you like a drink? (yes or no) "); // ask the user if he want drinks after ordering food
 		scanf("%s", &drink_yn);
 		if (strcmp(drink_yn, "yes") == 0)
@@ -269,7 +269,7 @@ void Rest()
 		}
 		else if (strcmp(drink_yn, "no") == 0)
 		{
-			Sleep(2);
+			sleep(2);
 			printf("Thank You!!\n");
 		}
 	}
@@ -302,13 +302,13 @@ void Drinks()
 	} while (i <= 14);
 	printf("How many drinks you want? ");
 	scanf("%d", &drink_count);
-	Sleep(2);
+	sleep(2);
 	printf("Please enter the number(s) of the drinks from the menu\n");
 	for (x = 1; x <= drink_count; ++x)
 	{
 		scanf("%s", &drinks_user[x]);
 	}
-	Sleep(4);
+	sleep(4);
 	printf("Okay, here is(are) your drink(s)\nwe will charge the price to your room \nThank you!!\n");
 }
 void Dishes()
@@ -334,13 +334,13 @@ void Dishes()
 	} while (i <= 9);
 	printf("How many dishes you want? ");
 	scanf("%d", &dishes_count);
-	Sleep(2);
+	sleep(2);
 	printf("Please enter the number(s) of the dish(es) from the menu\n");
 	for (x = 1; x <= dishes_count; ++x)
 	{
 		scanf("%s", &dishes_user[x]);
 	}
-	// Sleep
+	// sleep
 	printf("Okay, here is(are) your dish(s).\nwe will charge the price to your room \nThank you!!\n");
 }
 // functions for decoration
