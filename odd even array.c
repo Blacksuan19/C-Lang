@@ -20,21 +20,23 @@ int main(int argc, char const *argv[])
 
 		}
 	}
-	printf("odd numbers are:\n");
+	printf("odd numbers are: ");
 	for (int i = 1; i < SIZE; ++i)
 	{
 		if (odd_num[i] > 0)
 		{
-			printf("%d\n", odd_num[i]);
+			printf("%d ", odd_num[i]);
 		}
 	}
-	printf("even numbers are:\n");
+	printf("\n");
+	printf("even numbers are: ");
 	for (int x = 1; x < SIZE; ++x)
 	{
 		if (even_num[x] > 0)
 		{
-			printf("%d\n", even_num[x]);
+			printf("%d ", even_num[x]);
 		}
 	}
+	printf("\n");
 	return 0;
 }
