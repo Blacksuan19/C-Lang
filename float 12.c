@@ -2,7 +2,6 @@
 #define SIZE 12
 float Deci_num[SIZE], largest, average, total;
 void OP();
-float Largest();
 int main()
 {
 	printf("enter 12 floating point numbers?\n");
