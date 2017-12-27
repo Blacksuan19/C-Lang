@@ -10,12 +10,18 @@ int main()
 	printf("odd numbers are:\n");
 	for (int i = 1; i < SIZE; ++i)
 	{
-		printf("%d\n", odd_num[i]);
+		if (odd_num[i] > 0)
+		{
+			printf("%d\n", odd_num[i]);
+		}
 	}
 	printf("even numbers are:\n");
 	for (int x = 1; x < SIZE; ++x)
 	{
-		printf("%d\n", even_num[x]);
+		if (even_num[x] > 0)
+		{
+			printf("%d\n", even_num[x]);
+		}
 	}
 	return 0;
 }
