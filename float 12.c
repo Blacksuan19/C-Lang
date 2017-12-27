@@ -23,7 +23,7 @@ void OP()
 	}
 	for (int i = 0; i < SIZE; ++i)
 	{
-		average = (average + Deci_num[i]) / 2;
+		average = (average + Deci_num[i]) / 12;
 	}
 	largest = Deci_num[0];
 	for (int i = 1; i < SIZE; ++i)
