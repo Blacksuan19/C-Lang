@@ -1,3 +1,4 @@
+// print the total, average and largest value of 12 floating numbers in an array space.
 #include <stdio.h>
 #define SIZE 12
 float Deci_num[SIZE], largest, average, total;

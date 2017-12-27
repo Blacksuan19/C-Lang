@@ -29,7 +29,7 @@ void MA_FUNCTION()
 	num1 = 1 + rand() % (1 - 10 + 1);
 	num2 = 1 + rand() % (1 - 10 + 1);
 	multi = num1 * num2;
-	printf("%d times %d is equal to?\n", num1, num2);
+	printf("%d times %d is equal to? ", num1, num2);
 	printf("answer: ");
 	scanf("%d", &total);
 }

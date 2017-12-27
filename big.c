@@ -1,7 +1,7 @@
-// determine the largest value from 3 values enterd by user 
+// determine the largest value from 3 values enterd by user
 #include <stdio.h>
-int Max(int, int, int);
-int Min(int, int, int);
+int Max();
+int Min();
 int num, num1, num2, large, small;
 int main()
 {
@@ -9,13 +9,13 @@ int main()
 	scanf("%d", &num);
 	scanf("%d", &num1);
 	scanf("%d", &num2);
-	Max(num, num1, num2);
+	Max();
 	printf("the largest value is: %d\n", large);
-	Min(num, num1, num2);
+	Min();
 	printf("the smallest value is: %d\n", small);
 	return 0;
 }
-int Max(int a, int b, int c)
+int Max()
 {
 	if (num > num1 && num > num2)
 	{
@@ -31,7 +31,7 @@ int Max(int a, int b, int c)
 	}
 	return large;
 }
-int Min(int d, int e, int f)
+int Min()
 {
 	if (num < num1 && num < num2)
 	{

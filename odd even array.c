@@ -1,3 +1,4 @@
+// print odd or even numbers in an array.
 #include <stdio.h>
 #define SIZE 7
 int main(int argc, char const *argv[])
