@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define SIZE 3
+#define SIZE 12
 float Deci_num[SIZE], largest, average, total;
 void OP();
 float Largest();
