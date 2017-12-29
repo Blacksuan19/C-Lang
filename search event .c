@@ -1,4 +1,4 @@
-//  print numbers which are even and bigger than a user enterd number also print the sum of them. 
+//  print numbers which are even and bigger than a user enterd number also print the sum of them.
 #include <stdio.h>
 #define SIZE 15
 int number, Max[SIZE], list[15], i, sum;;

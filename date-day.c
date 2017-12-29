@@ -2,7 +2,7 @@
 # include <stdio.h>
 #include <unistd.h>
 #include <time.h>
-#include <stdlib.h>
+// #include <stdlib.h>
 #include <string.h>
 int main()
 {
@@ -24,5 +24,5 @@ int main()
 		s = s + month[i] ;
 	s = s + (date + year + (year / 4) - 2) ;
 	s = s % 7 ;
-	printf("\nThe day is : %s", week[s]) ;
+	printf("\nThe day is : %s\n", week[s]) ;
 }
