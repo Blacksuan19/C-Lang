@@ -1,3 +1,4 @@
+//  print numbers which are even and bigger than a user enterd number also print the sum of them. 
 #include <stdio.h>
 #define SIZE 15
 int number, Max[SIZE], list[15], i, sum;;
@@ -6,7 +7,7 @@ int main()
 {
 	printf("enter number: ");
 	scanf("%d", &number);
-	printf("enter 15 numbers :");
+	printf("enter %d numbers :", SIZE);
 	do
 	{
 		scanf("%d", &list[i]);
@@ -23,7 +24,7 @@ int main()
 		}
 		++i;
 	} while (i < SIZE);
-	printf("\ntotal of them is %d\n", sum);
+	printf("\nthe total of them is: %d\n", sum);
 	return 0;
 }
 int Search_Event()
