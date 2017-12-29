@@ -6,7 +6,7 @@ int Time();
 int main()
 {
 	Time();
-	printf("the time is: %d:%d:%d \n", hour, min, sec, month, day );
+	printf("the time is: %d:%d:%d \n", hour, min, sec);
 	if (month > 1 && month == 12)
 	{
 		printf("chill bruh its not the new year yet!!\n");
