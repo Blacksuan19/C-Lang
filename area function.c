@@ -11,7 +11,6 @@ int main()
 	scanf("%f", & radius);
 	Area();
 	printf("area is %.2f \nvolume is %.2f\n", area, volume);
-	return 0;
 }
 float Area()
 {
